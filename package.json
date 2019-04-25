@@ -2,9 +2,12 @@
   "name": "react-screen-burn",
   "version": "1.0.0",
   "description": "React component to help prevent screen burn in on wall panels",
-  "author": "adambowles",
+  "author": "nimvelo <hello@nimvelo.com>",
+  "contributors": [
+    "Adam Bowles <adam.bowles@nimvelo.com>"
+  ],
   "license": "MIT",
-  "repository": "adambowles/react-screen-burn",
+  "repository": "nimvelo/react-screen-burn",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",

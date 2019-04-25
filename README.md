@@ -15,12 +15,12 @@ npm install --save react-screen-burn
 ```tsx
 import * as React from 'react'
 
-import MyComponent from 'react-screen-burn'
+import { ScreenBurnLine } from 'react-screen-burn'
 
 class Example extends React.Component {
   render () {
     return (
-      <MyComponent />
+      <ScreenBurnLine />
     )
   }
 }
@@ -28,4 +28,4 @@ class Example extends React.Component {
 
 ## License
 
-MIT © [adambowles](https://github.com/adambowles)
+MIT © [Nimvelo](https://nimvelo.com/)
