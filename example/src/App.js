@@ -1,13 +1,15 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-import ExampleComponent from 'react-screen-burn'
+import { ScreenBurnLine } from 'react-screen-burn';
 
 export default class App extends Component {
-  render () {
+  render() {
     return (
       <div>
-        <ExampleComponent text='Modern React component module' />
+        <h1>React Screen Burn</h1>
+        <p>React component to help prevent screen burn in on wall panels</p>
+        <ScreenBurnLine />
       </div>
-    )
+    );
   }
 }
