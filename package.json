@@ -16,13 +16,24 @@
     "npm": ">=5"
   },
   "scripts": {
-    "test": "cross-env CI=1 react-scripts-ts test --env=jsdom",
-    "test:watch": "react-scripts-ts test --env=jsdom",
+    "test": "cross-env CI=1 react-scripts test --env=jsdom",
+    "test:watch": "react-scripts test --env=jsdom",
     "build": "rollup -c",
     "start": "rollup -c -w",
     "prepare": "npm run build",
     "predeploy": "cd example && npm install && npm run build",
-    "deploy": "gh-pages -d example/build"
+    "deploy": "gh-pages -d example/build",
+    "format": "npm-run-all -p format:*",
+    "format:ts": "prettier --config .prettierrc.js \"src/**/*.{js,ts,tsx}\" --write",
+    "format:styles": "prettier --config .prettierrc.js \"src/**/*.{css,scss}\" --write",
+    "lint": "npm-run-all -p lint:*",
+    "lint:ts": "tslint -c tslint.json \"src/**/*.{ts,tsx}\"",
+    "lint:styles": "stylelint \"src/**/*.{css,scss}\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   },
   "devDependencies": {
     "@svgr/rollup": "4.2.0",
@@ -44,7 +55,20 @@
     "rollup-plugin-postcss": "2.0.3",
     "rollup-plugin-typescript2": "0.21.0",
     "rollup-plugin-url": "2.2.1",
-    "typescript": "3.4.5"
+    "typescript": "3.4.5",
+    "@typescript-eslint/eslint-plugin": "1.7.0",
+    "@typescript-eslint/parser": "1.7.0",
+    "eslint-config-prettier": "4.1.0",
+    "husky": "2.1.0",
+    "node-sass-chokidar": "1.3.4",
+    "npm-run-all": "4.1.5",
+    "prettier": "^1.17.0",
+    "pretty-quick": "1.10.0",
+    "rimraf": "2.6.3",
+    "stylelint": "10.0.1",
+    "stylelint-config-prettier": "5.1.0",
+    "stylelint-config-property-sort-order-smacss": "4.0.2",
+    "stylelint-config-recommended": "2.2.0"
   },
   "files": [
     "dist"
