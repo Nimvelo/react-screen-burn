@@ -1,0 +1,21 @@
+{
+  "defaultSeverity": "warning",
+  "extends": [
+    "stylelint-config-recommended",
+    "stylelint-config-property-sort-order-smacss",
+    "stylelint-config-prettier"
+  ],
+  "rules": {
+    "custom-property-empty-line-before": null,
+    "declaration-block-no-duplicate-properties": [
+      true,
+      {
+        "severity": "error"
+      }
+    ],
+    "declaration-empty-line-before": null,
+    "declaration-no-important": true,
+    "font-family-no-missing-generic-family-keyword": null,
+    "no-empty-source": null
+  }
+}
