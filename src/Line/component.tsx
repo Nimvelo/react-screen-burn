@@ -22,9 +22,11 @@ export default class ScreenBurnLine extends React.Component<Props, State> {
 
   readonly state: State = {
     backgroundColor: this.determineInitialColor(),
+    lineSize: 1 / (window.devicePixelRatio || 1),
     top: 0,
     triggered: false,
-    triggerTime: process.env.NODE_ENV === 'production' ? 30 * 60 * 1000 : 1000,
+    // Development: 2 seconds, Production: 60 minutes
+    triggerTime: process.env.NODE_ENV !== 'production' ? 2000 : 60 * 60 * 1000,
   };
 
   public componentDidMount() {
@@ -38,10 +40,11 @@ export default class ScreenBurnLine extends React.Component<Props, State> {
   public componentDidUpdate(prevProps: Props, prevState: State) {
     if (prevState.triggered === false && this.state.triggered === true) {
       const updateTop = () => {
-        const top = this.state.top + 1;
+        const step = this.state.lineSize;
+        const top = this.state.top + step;
 
         // Move the current line down
-        if (this.state.top < window.innerHeight - 1) {
+        if (this.state.top < window.innerHeight - step) {
           this.setState({
             top,
           });
@@ -74,7 +77,7 @@ export default class ScreenBurnLine extends React.Component<Props, State> {
           this.setState({
             triggered: true,
           });
-        }, this.state.triggerTime);
+        }, this.state.triggerTime / 2);
       };
 
       window.requestAnimationFrame(updateTop);
@@ -91,6 +94,7 @@ export default class ScreenBurnLine extends React.Component<Props, State> {
         className={styles.line}
         style={{
           backgroundColor: this.state.backgroundColor,
+          height: this.state.lineSize,
           top: this.state.top,
         }}
       />

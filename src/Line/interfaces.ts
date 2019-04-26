@@ -4,6 +4,7 @@ export interface Props {
 
 export interface State {
   backgroundColor: string;
+  lineSize: number;
   top: number;
   triggered: boolean;
   triggerTime: number;
