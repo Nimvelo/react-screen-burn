@@ -5,7 +5,7 @@ import styles from './style.module.scss';
 import { Props, State } from './interfaces';
 
 export default class ScreenBurnLine extends React.Component<Props, State> {
-  readonly defaultProps: Props = {
+  static defaultProps: Props = {
     colors: ['#ff0000', '#00ff00', '#0000ff'],
   };
 
