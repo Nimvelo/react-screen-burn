@@ -7,7 +7,10 @@ export default class App extends Component {
     return (
       <React.Fragment>
         <h1>React Screen Burn</h1>
-        <p>React component to help prevent screen burn in on wall panels</p>
+        <p>
+          React component to help prevent screen burn in (for example on wall
+          panels)
+        </p>
         <ScreenBurnLine />
       </React.Fragment>
     );

@@ -37,6 +37,15 @@ export default {
       clean: true,
       rollupCommonJSResolveHack: true,
     }),
-    commonjs(),
+    commonjs({
+      namedExports: {
+        // https://rollupjs.org/guide/en#error-name-is-not-exported-by-module-
+        'node_modules/react/index.js': [
+          'createElement',
+          'Fragment',
+          'Component',
+        ],
+      },
+    }),
   ],
 };

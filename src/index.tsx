@@ -1,2 +1,2 @@
-import ScreenBurnLine from './Line';
+import ScreenBurnLine from './Line/component';
 export { ScreenBurnLine };

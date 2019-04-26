@@ -1,4 +1,4 @@
-import ScreenBurnLine from './';
+import ScreenBurnLine from './component';
 
 describe('ScreenBurnLine', () => {
   it('is truthy', () => {

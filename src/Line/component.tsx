@@ -5,13 +5,11 @@ import styles from './style.module.scss';
 import { Props, State } from './interfaces';
 
 export default class ScreenBurnLine extends React.Component<Props, State> {
-  static defaultProps: Props = {
+  readonly defaultProps: Props = {
     colors: ['#ff0000', '#00ff00', '#0000ff'],
   };
 
-  constructor(props: Props) {
-    super(props);
-
+  determineInitialColor = () => {
     let backgroundColor = '#ff0000';
     const deduplicatedColors = Array.from(new Set(this.props.colors));
 
@@ -19,14 +17,15 @@ export default class ScreenBurnLine extends React.Component<Props, State> {
       backgroundColor = deduplicatedColors[0] as string;
     }
 
-    this.state = {
-      backgroundColor,
-      top: 0,
-      triggered: false,
-      triggerTime:
-        process.env.NODE_ENV === 'production' ? 30 * 60 * 1000 : 1000,
-    };
-  }
+    return backgroundColor;
+  };
+
+  readonly state: State = {
+    backgroundColor: this.determineInitialColor(),
+    top: 0,
+    triggered: false,
+    triggerTime: process.env.NODE_ENV === 'production' ? 30 * 60 * 1000 : 1000,
+  };
 
   public componentDidMount() {
     setTimeout(() => {
@@ -82,9 +81,9 @@ export default class ScreenBurnLine extends React.Component<Props, State> {
     }
   }
 
-  public render(): JSX.Element | null {
+  public render(): JSX.Element {
     if (!this.state.triggered) {
-      return null;
+      return <React.Fragment />;
     }
 
     return (
