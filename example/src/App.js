@@ -11,6 +11,10 @@ export default class App extends Component {
           React component to help prevent screen burn in (for example on wall
           panels)
         </p>
+        <h2>Props</h2>
+        <p>
+          <code>colors: string[]</code> Array of CSS colors
+        </p>
         <ScreenBurnLine />
       </React.Fragment>
     );
