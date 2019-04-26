@@ -20,11 +20,11 @@ import { ScreenBurnLine } from 'react-screen-burn';
 class Example extends React.Component {
   render() {
     return (
-      <React.Fragment>
+      <div>
         <h1>React Screen Burn</h1>
         <p>React component to help prevent screen burn in on wall panels</p>
         <ScreenBurnLine />
-      </React.Fragment>
+      </div>
     );
   }
 }
