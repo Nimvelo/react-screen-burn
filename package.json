@@ -17,10 +17,12 @@
     "npm": ">=5"
   },
   "scripts": {
-    "test": "react-scripts test",
-    "build": "rollup -c",
-    "start": "rollup -c -w",
-    "prepare": "npm run lint && npm run format && npm run build",
+    "test": "npm run pretest && react-scripts test",
+    "build": "npm run prebuild && rollup -c",
+    "start": "npm run prebuild && rollup -c -w",
+    "pretest": "rm -f tsconfig.json && cp tsconfig.test.json tsconfig.json",
+    "prebuild": "rm -f tsconfig.json && cp tsconfig.build.json tsconfig.json",
+    "prepare": "npm run prebuild && npm run lint && npm run format && npm run build",
     "predeploy": "cd example && npm install && npm run build",
     "deploy": "gh-pages -d example/build",
     "format": "npm-run-all -p format:*",
