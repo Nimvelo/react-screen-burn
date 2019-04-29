@@ -1,6 +1,6 @@
 {
   "name": "react-screen-burn",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React component to help prevent screen burn in on wall panels",
   "author": "Nimvelo <hello@nimvelo.com>",
   "contributors": [
