@@ -1,7 +1,7 @@
 import ScreenBurnLine from './component';
 
-describe('ScreenBurnLine', () => {
-  it('is truthy', () => {
+describe('ScreenBurnLine', (): void => {
+  it('is truthy', (): void => {
     expect(ScreenBurnLine).toBeTruthy();
   });
 });

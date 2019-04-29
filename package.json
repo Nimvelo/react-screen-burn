@@ -20,14 +20,14 @@
     "test": "react-scripts test",
     "build": "rollup -c",
     "start": "rollup -c -w",
-    "prepare": "npm run build",
+    "prepare": "npm run lint && npm run format && npm run build",
     "predeploy": "cd example && npm install && npm run build",
     "deploy": "gh-pages -d example/build",
     "format": "npm-run-all -p format:*",
     "format:ts": "prettier --config .prettierrc.js \"src/**/*.{js,ts,tsx}\" --write",
     "format:styles": "prettier --config .prettierrc.js \"src/**/*.{css,scss}\" --write",
     "lint": "npm-run-all -p lint:*",
-    "lint:ts": "tslint -c tslint.json \"src/**/*.{ts,tsx}\"",
+    "lint:ts": "eslint -c .eslintrc.json \"src/**/*.{ts,tsx}\"",
     "lint:styles": "stylelint \"src/**/*.{css,scss}\""
   },
   "husky": {

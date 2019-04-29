@@ -5,7 +5,7 @@ export interface Props {
 }
 
 export interface State {
-  backgroundColor: string;
+  backgroundColor: React.CSSProperties['color'];
   lineSize: number;
   top: number;
   triggered: boolean;

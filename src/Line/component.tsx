@@ -5,14 +5,14 @@ import styles from './style.module.scss';
 import { Props, State } from './interfaces';
 
 export default class ScreenBurnLine extends React.Component<Props, State> {
-  static defaultProps: Props = {
+  public static defaultProps: Props = {
     colors: ['#ff0000', '#00ff00', '#0000ff'],
     retriggerTime:
       process.env.NODE_ENV !== 'production' ? 1000 : 60 * 60 * 1000,
     triggerTime: process.env.NODE_ENV !== 'production' ? 2000 : 60 * 60 * 2000,
   };
 
-  determineInitialColor = () => {
+  private determineInitialColor = (): React.CSSProperties['color'] => {
     let backgroundColor = '#ff0000';
     const deduplicatedColors = Array.from(new Set(this.props.colors));
 
@@ -23,24 +23,24 @@ export default class ScreenBurnLine extends React.Component<Props, State> {
     return backgroundColor;
   };
 
-  readonly state: State = {
+  public readonly state: State = {
     backgroundColor: this.determineInitialColor(),
     lineSize: 1 / (window.devicePixelRatio || 1),
     top: 0,
     triggered: false,
   };
 
-  public componentDidMount() {
-    setTimeout(() => {
+  public componentDidMount(): void {
+    setTimeout((): void => {
       this.setState({
         triggered: true,
       });
     }, this.props.triggerTime);
   }
 
-  public componentDidUpdate(prevProps: Props, prevState: State) {
+  public componentDidUpdate(prevProps: Props, prevState: State): void {
     if (prevState.triggered === false && this.state.triggered === true) {
-      const updateTop = () => {
+      const updateTop = (): void => {
         const step = this.state.lineSize;
         const top = this.state.top + step;
 
@@ -58,7 +58,7 @@ export default class ScreenBurnLine extends React.Component<Props, State> {
         // Determine next line characteristics
         const deduplicatedColors = Array.from(new Set(this.props.colors));
         const currentIndex = deduplicatedColors.findIndex(
-          (color) => color === this.state.backgroundColor,
+          (color): boolean => color === this.state.backgroundColor,
         );
 
         let nextColor = '#ff0000';
@@ -74,7 +74,7 @@ export default class ScreenBurnLine extends React.Component<Props, State> {
           triggered: false,
         });
 
-        setTimeout(() => {
+        setTimeout((): void => {
           this.setState({
             triggered: true,
           });
