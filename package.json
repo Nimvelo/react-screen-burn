@@ -24,8 +24,8 @@
     "predeploy": "cd example && npm install && npm run build",
     "deploy": "gh-pages -d example/build",
     "format": "npm-run-all -p format:*",
-    "format:ts": "prettier --config .prettierrc.js \"src/**/*.{js,ts,tsx}\" --write",
-    "format:styles": "prettier --config .prettierrc.js \"src/**/*.{css,scss}\" --write",
+    "format:ts": "prettier --config .prettierrc.json \"src/**/*.{js,ts,tsx}\" --write",
+    "format:styles": "prettier --config .prettierrc.json \"src/**/*.{css,scss}\" --write",
     "lint": "npm-run-all -p lint:*",
     "lint:ts": "eslint -c .eslintrc.json \"src/**/*.{ts,tsx}\"",
     "lint:styles": "stylelint \"src/**/*.{css,scss}\""
