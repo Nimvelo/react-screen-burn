@@ -37,6 +37,14 @@ class Example extends React.Component {
 }
 ```
 
+## Props
+
+| Prop            | Type       | Description                                                     |
+| --------------- | ---------- | --------------------------------------------------------------- |
+| `colors`        | `string[]` | Array of CSS colors                                             |
+| `retriggerTime` | `number`   | Milliseconds until line restarts after reaching end of viewport |
+| `triggerTime`   | `number`   | Milliseconds after render until line first starts               |
+
 ## License
 
 MIT © [Nimvelo](https://nimvelo.com/)
