@@ -1,6 +1,6 @@
 # react-screen-burn
 
-> React component to help prevent screen burn in on wall panels
+> React component to help prevent screen burn in (for example on wall panels)
 
 [![NPM](https://img.shields.io/npm/v/react-screen-burn.svg)](https://www.npmjs.com/package/react-screen-burn)
 
@@ -22,8 +22,15 @@ class Example extends React.Component {
     return (
       <div>
         <h1>React Screen Burn</h1>
-        <p>React component to help prevent screen burn in on wall panels</p>
-        <ScreenBurnLine />
+        <p>
+          React component to help prevent screen burn in (for example on wall
+          panels)
+        </p>
+        <ScreenBurnLine
+          colors={['#ff0000', '#00ff00', '#0000ff']}
+          retriggerTime={1000}
+          triggerTime={2000}
+        />
       </div>
     );
   }

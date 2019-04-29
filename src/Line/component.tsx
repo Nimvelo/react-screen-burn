@@ -7,6 +7,9 @@ import { Props, State } from './interfaces';
 export default class ScreenBurnLine extends React.Component<Props, State> {
   static defaultProps: Props = {
     colors: ['#ff0000', '#00ff00', '#0000ff'],
+    retriggerTime:
+      process.env.NODE_ENV !== 'production' ? 1000 : 60 * 60 * 1000,
+    triggerTime: process.env.NODE_ENV !== 'production' ? 2000 : 60 * 60 * 2000,
   };
 
   determineInitialColor = () => {
@@ -25,8 +28,6 @@ export default class ScreenBurnLine extends React.Component<Props, State> {
     lineSize: 1 / (window.devicePixelRatio || 1),
     top: 0,
     triggered: false,
-    // Development: 2 seconds, Production: 60 minutes
-    triggerTime: process.env.NODE_ENV !== 'production' ? 2000 : 60 * 60 * 1000,
   };
 
   public componentDidMount() {
@@ -34,7 +35,7 @@ export default class ScreenBurnLine extends React.Component<Props, State> {
       this.setState({
         triggered: true,
       });
-    }, this.state.triggerTime);
+    }, this.props.triggerTime);
   }
 
   public componentDidUpdate(prevProps: Props, prevState: State) {
@@ -77,7 +78,7 @@ export default class ScreenBurnLine extends React.Component<Props, State> {
           this.setState({
             triggered: true,
           });
-        }, this.state.triggerTime / 2);
+        }, this.props.retriggerTime);
       };
 
       window.requestAnimationFrame(updateTop);

@@ -11,11 +11,25 @@ export default class App extends Component {
           React component to help prevent screen burn in (for example on wall
           panels)
         </p>
+
         <h2>Props</h2>
         <p>
           <code>colors: string[]</code> Array of CSS colors
         </p>
-        <ScreenBurnLine />
+        <p>
+          <code>retriggerTime: number</code> Milliseconds until line restarts
+          after reaching end of viewport
+        </p>
+        <p>
+          <code>triggerTime: number</code> Milliseconds after render until line
+          first starts
+        </p>
+
+        <ScreenBurnLine
+          colors={['#ff0000', '#00ff00', '#0000ff']}
+          retriggerTime={1000}
+          triggerTime={2000}
+        />
       </div>
     );
   }

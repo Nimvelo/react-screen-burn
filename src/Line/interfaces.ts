@@ -1,5 +1,7 @@
 export interface Props {
   colors?: React.CSSProperties['color'][];
+  retriggerTime?: number;
+  triggerTime?: number;
 }
 
 export interface State {
@@ -7,5 +9,4 @@ export interface State {
   lineSize: number;
   top: number;
   triggered: boolean;
-  triggerTime: number;
 }
