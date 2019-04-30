@@ -23,7 +23,7 @@
     "prepare": "npm run lint && npm run format && npm run build",
     "predeploy": "cd example && npm install && npm run build",
     "deploy": "gh-pages -d example/build",
-    "postpublish": "git push --tags && git push",
+    "postpublish": "git push --tags",
     "format": "npm-run-all -p format:*",
     "format:ts": "prettier --config .prettierrc.json \"src/**/*.{ts,tsx}\" --write",
     "format:styles": "prettier --config .prettierrc.json \"src/**/*.scss\" --write",
