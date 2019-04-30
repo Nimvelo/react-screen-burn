@@ -27,8 +27,8 @@ export default class App extends Component {
 
         <ScreenBurnLine
           colors={['#ff0000', '#00ff00', '#0000ff']}
-          retriggerTime={1000}
-          triggerTime={2000}
+          retriggerTime={0}
+          triggerTime={0}
         />
       </div>
     );

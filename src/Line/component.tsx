@@ -111,6 +111,7 @@ export default class ScreenBurnLine extends React.Component<Props, State> {
     return (
       <div
         className={styles.line}
+        data-testid={this.props['data-testid']}
         style={{
           backgroundColor: this.state.backgroundColor,
           height: this.state.lineSize,
