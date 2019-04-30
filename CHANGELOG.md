@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.4
+
+Testing out postversion script
+
 ## v1.0.3
 
 Clean up unused dependencies and fix scripts
