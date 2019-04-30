@@ -14,7 +14,8 @@ Install:
   stage: install
   script:
     - npm install
-  except: tags
+  except:
+    - tags
 
 Lint:
   stage: lint
@@ -22,7 +23,8 @@ Lint:
     - npm run lint
   dependencies:
     - Install
-  except: tags
+  except:
+    - tags
 
 Test:
   stage: test
@@ -30,4 +32,5 @@ Test:
     - npm test
   dependencies:
     - Install
-  except: tags
+  except:
+    - tags
