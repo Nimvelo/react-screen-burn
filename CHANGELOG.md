@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.5
+
+Change postversion to postpublish
+
 ## v1.0.4
 
 Testing out postversion script
