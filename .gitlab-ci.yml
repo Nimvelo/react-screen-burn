@@ -1,0 +1,30 @@
+image: node:dubnium-alpine
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+
+stages:
+  - install
+  - lint
+  - test
+
+Install:
+  stage: install
+  script:
+    - npm install
+
+Lint:
+  stage: lint
+  script:
+    - npm run lint
+  dependencies:
+    - Install
+
+Test:
+  stage: test
+  script:
+    - npm test
+  dependencies:
+    - Install
