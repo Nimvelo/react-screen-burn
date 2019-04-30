@@ -26,6 +26,7 @@ describe('ScreenBurnLine', (): void => {
         colors={['blue']}
         data-testid='background'
         retriggerTime={0}
+        size={1}
         triggerTime={0}
       />,
     );

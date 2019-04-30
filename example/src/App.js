@@ -21,6 +21,11 @@ export default class App extends Component {
           after reaching end of viewport
         </p>
         <p>
+          <code>size: number</code> Pixel height of line. This will scale on
+          high DPI displays, e.g. value of 1 on a 3 device pixel ratio screen
+          will render as 1/3 of a display pixel (1 physical pixel)
+        </p>
+        <p>
           <code>triggerTime: number</code> Milliseconds after render until line
           first starts
         </p>
@@ -28,6 +33,7 @@ export default class App extends Component {
         <ScreenBurnLine
           colors={['#ff0000', '#00ff00', '#0000ff']}
           retriggerTime={0}
+          size={1}
           triggerTime={0}
         />
       </React.Fragment>
