@@ -5,7 +5,7 @@ import { ScreenBurnLine } from 'react-screen-burn';
 export default class App extends Component {
   render() {
     return (
-      <div>
+      <React.Fragment>
         <h1>React Screen Burn</h1>
         <p>
           React component to help prevent screen burn in (for example on wall
@@ -30,7 +30,7 @@ export default class App extends Component {
           retriggerTime={0}
           triggerTime={0}
         />
-      </div>
+      </React.Fragment>
     );
   }
 }

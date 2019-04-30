@@ -103,9 +103,9 @@ export default class ScreenBurnLine extends React.Component<Props, State> {
     }
   }
 
-  public render(): JSX.Element | null {
+  public render(): JSX.Element {
     if (!this.state.triggered) {
-      return null;
+      return <React.Fragment />;
     }
 
     return (
