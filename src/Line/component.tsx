@@ -123,7 +123,7 @@ export default class ScreenBurnLine extends React.Component<Props, State> {
         style={{
           backgroundColor: this.state.backgroundColor,
           height: this.state.size,
-          top: this.state.top,
+          top: document.documentElement.scrollTop + this.state.top,
         }}
       />
     );
