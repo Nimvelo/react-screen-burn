@@ -48,4 +48,4 @@ class Example extends React.Component {
 
 ## License
 
-MIT © [Nimvelo](https://nimvelo.com/)
+MIT © [Sipcentric Ltd.](https://nimvelo.com/)
