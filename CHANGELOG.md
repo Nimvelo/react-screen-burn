@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.9
+
+Clear the retrigger timeout on unmount
+
 ## v1.0.8
 
 Add scroll position to line render position
