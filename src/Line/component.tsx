@@ -117,9 +117,9 @@ export default class ScreenBurnLine extends React.Component<Props, State> {
     window.clearTimeout(this.triggerTimeout);
   }
 
-  public render(): JSX.Element {
+  public render(): JSX.Element | null {
     if (!this.state.triggered) {
-      return <React.Fragment />;
+      return null;
     }
 
     return (
