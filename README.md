@@ -29,6 +29,7 @@ class Example extends React.Component {
         <ScreenBurnLine
           colors={['#ff0000', '#00ff00', '#0000ff']}
           retriggerTime={1000}
+          size={1}
           triggerTime={2000}
         />
       </React.Fragment>
