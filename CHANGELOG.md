@@ -1,5 +1,17 @@
 # Changelog
 
+## v1.0.8
+
+Add scroll position to line render position
+
+## v1.0.7
+
+Add size prop
+
+## v1.0.6
+
+Ignore pointer events
+
 ## v1.0.5
 
 Change postversion to postpublish
