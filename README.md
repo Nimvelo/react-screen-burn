@@ -39,12 +39,12 @@ class Example extends React.Component {
 
 ## Props
 
-| Prop            | Type       | Description                                                                                                                                                           |
-| --------------- | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `colors`        | `string[]` | Array of CSS colors                                                                                                                                                   |
-| `retriggerTime` | `number`   | Milliseconds until line restarts after reaching end of viewport                                                                                                       |
-| `size`          | `number`   | Pixel height of line. This will scale on high DPI displays, e.g. value of 1 on a 3 device pixel ratio screen will render as 1/3 of a display pixel (1 physical pixel) |
-| `triggerTime`   | `number`   | Milliseconds after render until line first starts                                                                                                                     |
+| Prop            | Type       | Default                             | Description                                                                                                                                                           |
+| --------------- | ---------- | ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `colors`        | `string[]` | `['#ff0000', '#00ff00', '#0000ff']` | Array of CSS colors                                                                                                                                                   |
+| `retriggerTime` | `number`   | `3600000` (1 hour)                  | Milliseconds until line restarts after reaching end of viewport                                                                                                       |
+| `size`          | `number`   | `1`                                 | Pixel height of line. This will scale on high DPI displays, e.g. value of 1 on a 3 device pixel ratio screen will render as 1/3 of a display pixel (1 physical pixel) |
+| `triggerTime`   | `number`   | `3600000` (1 hour)                  | Milliseconds after render until line first starts                                                                                                                     |
 
 ## License
 
