@@ -16,6 +16,8 @@ export default class ScreenBurnLine extends React.Component<Props, State> {
     return backgroundColor;
   };
 
+  private triggerTimeout: number = 0;
+
   private trigger = (): void => {
     const updateTop = (top = 0): void => {
       const step = this.state.size;
@@ -57,7 +59,7 @@ export default class ScreenBurnLine extends React.Component<Props, State> {
       const retriggerTime = this.props.retriggerTime || 0;
 
       if (retriggerTime > 0) {
-        setTimeout((): void => {
+        this.triggerTimeout = window.setTimeout((): void => {
           this.setState({
             triggered: true,
           });
@@ -95,7 +97,7 @@ export default class ScreenBurnLine extends React.Component<Props, State> {
     const triggerTime = this.props.triggerTime || 0;
 
     if (triggerTime > 0) {
-      setTimeout((): void => {
+      this.triggerTimeout = window.setTimeout((): void => {
         this.setState({
           triggered: true,
         });
@@ -109,6 +111,10 @@ export default class ScreenBurnLine extends React.Component<Props, State> {
     if (prevState.triggered === false && this.state.triggered === true) {
       this.trigger();
     }
+  }
+
+  public componentWillUnmount(): void {
+    window.clearTimeout(this.triggerTimeout);
   }
 
   public render(): JSX.Element {
