@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.10
+
+Remove Fragments again
+
 ## v1.0.9
 
 Clear the retrigger timeout on unmount
