@@ -5,7 +5,7 @@ import styles from './style.module.scss';
 import { Props, State } from './interfaces';
 
 export default class ScreenBurnLine extends React.Component<Props, State> {
-  private determineInitialColor = (): React.CSSProperties['color'] => {
+  private getInitialColor = (): React.CSSProperties['color'] => {
     let backgroundColor = '#ff0000';
     const deduplicatedColors = Array.from(new Set(this.props.colors));
 
@@ -20,6 +20,10 @@ export default class ScreenBurnLine extends React.Component<Props, State> {
 
   private trigger = (): void => {
     const updateTop = (top = 0): void => {
+      if (this.triggerTimeout === -0) {
+        return;
+      }
+
       const step = this.state.size;
 
       // Move the current line down
@@ -56,6 +60,8 @@ export default class ScreenBurnLine extends React.Component<Props, State> {
         triggered: false,
       });
 
+      window.clearTimeout(this.triggerTimeout);
+
       const retriggerTime = this.props.retriggerTime || 0;
 
       if (retriggerTime > 0) {
@@ -87,7 +93,7 @@ export default class ScreenBurnLine extends React.Component<Props, State> {
   };
 
   public readonly state: State = {
-    backgroundColor: this.determineInitialColor(),
+    backgroundColor: this.getInitialColor(),
     size: (this.props.size || 1) / (window.devicePixelRatio || 1),
     top: 0,
     triggered: this.props.triggerTime === 0,
@@ -98,9 +104,7 @@ export default class ScreenBurnLine extends React.Component<Props, State> {
 
     if (triggerTime > 0) {
       this.triggerTimeout = window.setTimeout((): void => {
-        this.setState({
-          triggered: true,
-        });
+        this.setState({ triggered: true });
       }, triggerTime);
     } else {
       this.trigger();
@@ -114,7 +118,12 @@ export default class ScreenBurnLine extends React.Component<Props, State> {
   }
 
   public componentWillUnmount(): void {
+    this.setState({
+      top: window.innerHeight,
+    });
+
     window.clearTimeout(this.triggerTimeout);
+    this.triggerTimeout = 0;
   }
 
   public render(): JSX.Element | null {
