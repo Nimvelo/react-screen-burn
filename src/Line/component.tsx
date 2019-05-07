@@ -86,10 +86,9 @@ export default class ScreenBurnLine extends React.Component<Props, State> {
 
   public static defaultProps: Props = {
     colors: ['#ff0000', '#00ff00', '#0000ff'],
-    retriggerTime:
-      process.env.NODE_ENV !== 'production' ? 1000 : 60 * 60 * 1000,
+    retriggerTime: 60 * 60 * 1000,
     size: 1,
-    triggerTime: process.env.NODE_ENV !== 'production' ? 2000 : 60 * 60 * 2000,
+    triggerTime: 60 * 60 * 1000,
   };
 
   public readonly state: State = {
