@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.11
+
+Clear and ignore timeouts on unmount
+
 ## v1.0.10
 
 Remove Fragments again
