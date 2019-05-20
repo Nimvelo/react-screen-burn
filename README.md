@@ -4,8 +4,6 @@
 
 [![NPM](https://img.shields.io/npm/v/react-screen-burn.svg)](https://www.npmjs.com/package/react-screen-burn) [![Travis CI](https://travis-ci.com/Nimvelo/react-screen-burn.svg?branch=master)](https://travis-ci.com/Nimvelo/react-screen-burn) [![Bundlephobia](https://badgen.net/bundlephobia/minzip/react-screen-burn)](https://bundlephobia.com/result?p=react-screen-burn) [![Packagephobia](https://badgen.net/packagephobia/publish/react-screen-burn)](https://packagephobia.now.sh/result?p=react-screen-burn)
 
-https://badgen.net/packagephobia/publish/webpack
-
 ## Install
 
 ```bash
