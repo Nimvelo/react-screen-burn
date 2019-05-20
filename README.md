@@ -2,7 +2,7 @@
 
 > React component to help prevent screen burn in (for example on wall panels)
 
-[![NPM](https://img.shields.io/npm/v/react-screen-burn.svg)](https://www.npmjs.com/package/react-screen-burn) [![Travis CI](https://travis-ci.com/Nimvelo/react-screen-burn.svg?branch=master)](https://travis-ci.com/Nimvelo/react-screen-burn)
+[![NPM](https://img.shields.io/npm/v/react-screen-burn.svg)](https://www.npmjs.com/package/react-screen-burn) [![Travis CI](https://travis-ci.com/Nimvelo/react-screen-burn.svg?branch=master)](https://travis-ci.com/Nimvelo/react-screen-burn) [![Bundlephobia](https://badgen.net/bundlephobia/minzip/react-screen-burn)](https://bundlephobia.com/result?p=react-screen-burn)
 
 ## Install
 
