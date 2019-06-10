@@ -67,7 +67,7 @@
     "rollup-plugin-typescript": "1.0.1",
     "stylelint": "10.1.0",
     "stylelint-config-prettier": "5.2.0",
-    "stylelint-config-property-sort-order-smacss": "4.0.2",
+    "stylelint-config-property-sort-order-smacss": "5.0.0",
     "stylelint-config-recommended": "2.2.0",
     "typescript": "3.5.1"
   },
