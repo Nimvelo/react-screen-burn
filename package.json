@@ -50,7 +50,7 @@
     "@typescript-eslint/parser": "1.10.2",
     "eslint-config-prettier": "4.3.0",
     "gh-pages": "2.0.1",
-    "husky": "2.4.0",
+    "husky": "2.4.1",
     "jest-dom": "3.5.0",
     "lint-staged": "8.2.0",
     "node-sass": "4.12.0",
