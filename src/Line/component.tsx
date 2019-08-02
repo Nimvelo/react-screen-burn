@@ -32,11 +32,9 @@ export default class ScreenBurnLine extends React.Component<Props, State> {
           top,
         });
 
-        window.requestAnimationFrame(
-          (): void => {
-            updateTop(top + step);
-          },
-        );
+        window.requestAnimationFrame((): void => {
+          updateTop(top + step);
+        });
 
         return;
       }
@@ -77,11 +75,9 @@ export default class ScreenBurnLine extends React.Component<Props, State> {
       }
     };
 
-    window.requestAnimationFrame(
-      (): void => {
-        updateTop();
-      },
-    );
+    window.requestAnimationFrame((): void => {
+      updateTop();
+    });
   };
 
   public static defaultProps: Props = {
