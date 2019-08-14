@@ -8,7 +8,6 @@
   ],
   "parser": "@typescript-eslint/parser",
   "rules": {
-    "@typescript-eslint/no-any": true,
     "sort-keys": 1
   }
 }
