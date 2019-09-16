@@ -67,7 +67,7 @@
     "stylelint": "10.1.0",
     "stylelint-config-prettier": "5.2.0",
     "stylelint-config-property-sort-order-smacss": "5.0.0",
-    "stylelint-config-recommended": "2.2.0",
+    "stylelint-config-recommended": "3.0.0",
     "typescript": "3.6.3"
   },
   "files": [
