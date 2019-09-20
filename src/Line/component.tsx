@@ -16,7 +16,7 @@ export default class ScreenBurnLine extends React.Component<Props, State> {
     return backgroundColor;
   };
 
-  private triggerTimeout: number = 0;
+  private triggerTimeout = 0;
 
   private trigger = (): void => {
     const updateTop = (top = 0): void => {
