@@ -59,7 +59,7 @@
     "react": "16.10.2",
     "react-dom": "16.10.2",
     "react-scripts": "3.2.0",
-    "rollup": "1.23.1",
+    "rollup": "1.24.0",
     "rollup-plugin-commonjs": "10.1.0",
     "rollup-plugin-node-resolve": "5.2.0",
     "rollup-plugin-postcss": "2.0.3",
