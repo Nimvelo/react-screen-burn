@@ -68,7 +68,7 @@
     "stylelint-config-prettier": "8.0.0",
     "stylelint-config-property-sort-order-smacss": "5.2.0",
     "stylelint-config-recommended": "3.0.0",
-    "typescript": "3.7.3"
+    "typescript": "3.7.4"
   },
   "resolutions": {
     "react-scripts/eslint-config-react-app": "5.0.1"
